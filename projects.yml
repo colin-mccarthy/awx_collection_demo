@@ -13,7 +13,6 @@
     awx.awx.tower_organization:
       name: "REDHAT ORGANIZATION"
       description: "RedHat Organization"
-      state: present
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -64,7 +63,6 @@
       name: "RedHatSI"
       description: "RedHat SI"
       organization: "REDHAT ORGANIZATION"
-      state: present
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -78,7 +76,6 @@
       user: colin-mccarthy
       organization: "REDHAT ORGANIZATION"
       role: member
-      state: present
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -90,7 +87,6 @@
       user: wtcross
       organization: "REDHAT ORGANIZATION"
       role: member
-      state: present
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
