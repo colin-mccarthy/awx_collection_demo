@@ -21,7 +21,6 @@
 
 
 
-
 # PROJECTS     
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
@@ -29,6 +28,20 @@
       organization: "REDHAT ORGANIZATION"
       scm_type: git
       scm_url: "https://github.com/colin-mccarthy/windows_demo"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      
+      
+      
+# TEAMS
+  - name: CREATE TEAM
+    awx.awx.tower_team:
+      name: "RedHatSI"
+      description: "RedHat SI"
+      organization: "REDHAT ORGANIZATION"
+      state: present
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
