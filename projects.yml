@@ -8,12 +8,25 @@
 
 
   tasks:
+# ORGS
+  - name: CREATE REDHAT ORGANIZATION
+    awx.awx.tower_organization:
+      name: "REDHAT ORGANIZATION"
+      description: "RedHat Organization"
+      state: present
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
 
-      
+
+
+
+# PROJECTS     
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
       name: "Windows Demo"
-      organization: "Default"
+      organization: "REDHAT ORGANIZATION"
       scm_type: git
       scm_url: "https://github.com/colin-mccarthy/windows_demo"
       tower_username: admin
