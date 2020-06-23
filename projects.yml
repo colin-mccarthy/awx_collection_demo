@@ -46,3 +46,28 @@
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
+      
+ 
+# PERMISSIONS
+
+  - name: ENSURE THAT NWADMIN BELONGS TO ORG
+    awx.awx.tower_role:
+      user: colin-mccarthy
+      organization: "REDHAT ORGANIZATION"
+      role: member
+      state: present
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      validate_certs: false
+      
+  - name: ENSURE THAT NWADMIN BELONGS TO ORG
+    awx.awx.tower_role:
+      user: wtcross
+      organization: "REDHAT ORGANIZATION"
+      role: member
+      state: present
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      validate_certs: false
