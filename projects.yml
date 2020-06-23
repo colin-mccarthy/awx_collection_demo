@@ -93,6 +93,7 @@
       validate_certs: false
       state: "{{ state }}"
       
+
 # CREDENTIALS
   - name: ADD SSH credential into Ansible Tower
     awx.awx.tower_credential:
