@@ -134,3 +134,16 @@
     until: windows_inventory is success
     delay: 3
     retries: 5
+    
+  - name: CREATE INVENTORY
+    awx.awx.tower_inventory:
+      name: "RHEL Inventory"
+      organization: "REDHAT ORGANIZATION"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+    register: rhel_inventory
+    until: rhel_inventory is success
+    delay: 3
+    retries: 5
