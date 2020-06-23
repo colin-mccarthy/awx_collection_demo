@@ -98,7 +98,7 @@
     awx.awx.tower_credential:
       username: ec2-user
       name: "Workshop Credential"
-      ssh_key_data: "{{ foo }}"
+      ssh_key_data: "{{lookup('file', 'templates/file.txt')}}"
       kind: ssh
       organization: "Default"
       tower_username: admin
