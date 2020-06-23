@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   collections:
-    - ansible.tower
+    - awx.awx
     
     
  # organization and state vars are injected via a survey in Ansible Tower.   
