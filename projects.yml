@@ -97,10 +97,22 @@
   - name: add SSH credential into Ansible Tower
     awx.awx.tower_credential:
       username: ec2-user
-      name: "Workshop Credential"
-      ssh_key_data: "{{lookup('file', 'templates/file.txt')}}"
+      password: "{{admin_password}}"
+      name: "Windows Credential"
       kind: ssh
-      organization: "Default"
+      organization: "REDHAT ORGANIZATION"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      
+  - name: add SSH credential into Ansible Tower
+    awx.awx.tower_credential:
+      username: ec2-user
+      password: "{{admin_password}}"
+      name: "RHEL Credential"
+      kind: ssh
+      organization: "REDHAT ORGANIZATION"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
