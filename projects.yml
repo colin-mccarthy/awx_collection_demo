@@ -24,6 +24,17 @@
 # PROJECTS     
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
+      name: "RHEL Demo"
+      organization: "REDHAT ORGANIZATION"
+      scm_type: git
+      scm_url: "https://github.com/colin-mccarthy/rhel_ansible_demo"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      
+  - name: ADD REPO INTO TOWER
+    awx.awx.tower_project:
       name: "Windows Demo"
       organization: "REDHAT ORGANIZATION"
       scm_type: git
@@ -33,6 +44,16 @@
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
       
+  - name: ADD REPO INTO TOWER
+    awx.awx.tower_project:
+      name: "ServiceNow Demo"
+      organization: "REDHAT ORGANIZATION"
+      scm_type: git
+      scm_url: "https://github.com/colin-mccarthy/servicenow_demo"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
       
       
 # TEAMS
