@@ -2,6 +2,7 @@
 - name: Tower Projects
   hosts: tower
   gather_facts: false
+  connection: local
   collections:
     - awx.awx
 
