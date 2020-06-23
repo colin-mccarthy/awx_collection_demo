@@ -49,7 +49,6 @@
       
  
 # PERMISSIONS
-
   - name: ENSURE THAT NWADMIN BELONGS TO ORG
     awx.awx.tower_role:
       user: colin-mccarthy
