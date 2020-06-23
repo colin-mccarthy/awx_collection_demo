@@ -1,0 +1,18 @@
+---
+- name: Tower Projects
+  hosts: tower
+
+
+  tasks:
+
+      
+  - name: ADD REPO INTO TOWER
+    awx.awx.tower_project:
+      name: "Windows Demo"
+      organization: "Default"
+      scm_type: git
+      scm_url: "https://github.com/colin-mccarthy/windows_demo"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
