@@ -9,9 +9,9 @@
 
   tasks:
 # ORGS
-  - name: CREATE REDHAT ORGANIZATION
+  - name: CREATE ORGANIZATION
     awx.awx.tower_organization:
-      name: "REDHAT ORGANIZATION"
+      name: "{{ organization }}"
       description: "RedHat Organization"
       tower_username: admin
       tower_password: "{{ admin_password }}"
@@ -23,7 +23,7 @@
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
       name: "RHEL Demo"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       scm_type: git
       scm_url: "https://github.com/colin-mccarthy/rhel_ansible_demo"
       tower_username: admin
@@ -35,7 +35,7 @@
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
       name: "Windows Demo"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       scm_type: git
       scm_url: "https://github.com/colin-mccarthy/windows_demo"
       tower_username: admin
@@ -47,7 +47,7 @@
   - name: ADD REPO INTO TOWER
     awx.awx.tower_project:
       name: "ServiceNow Demo"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       scm_type: git
       scm_url: "https://github.com/colin-mccarthy/servicenow_demo"
       tower_username: admin
@@ -62,7 +62,7 @@
     awx.awx.tower_team:
       name: "RedHatSI"
       description: "RedHat SI"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -74,7 +74,7 @@
   - name: ENSURE THAT USER BELONGS TO ORG
     awx.awx.tower_role:
       user: colin-mccarthy
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       role: member
       tower_username: admin
       tower_password: "{{ admin_password }}"
@@ -85,7 +85,7 @@
   - name: ENSURE THAT USER BELONGS TO ORG
     awx.awx.tower_role:
       user: wtcross
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       role: member
       tower_username: admin
       tower_password: "{{ admin_password }}"
@@ -101,7 +101,7 @@
       password: "{{admin_password}}"
       name: "Windows Credential"
       kind: ssh
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -114,7 +114,7 @@
       password: "{{admin_password}}"
       name: "RHEL Credential"
       kind: ssh
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -126,7 +126,7 @@
   - name: CREATE INVENTORY
     awx.awx.tower_inventory:
       name: "Windows Inventory"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
@@ -139,7 +139,7 @@
   - name: CREATE INVENTORY
     awx.awx.tower_inventory:
       name: "RHEL Inventory"
-      organization: "REDHAT ORGANIZATION"
+      organization: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
