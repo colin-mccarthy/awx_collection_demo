@@ -7,7 +7,7 @@
     - awx.awx
     
     
- # organization and state vars are injected via and survey in Ansible Tower.   
+ # organization and state vars are injected via a survey in Ansible Tower.   
 
 
   tasks:
