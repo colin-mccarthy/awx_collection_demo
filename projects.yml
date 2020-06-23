@@ -1,6 +1,9 @@
 ---
 - name: Tower Projects
   hosts: tower
+  gather_facts: false
+  collections:
+    - awx.awx
 
 
   tasks:
