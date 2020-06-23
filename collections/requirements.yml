@@ -1,3 +1,3 @@
 ---
 collections:
-- ansible.tower
+- awx.awx
