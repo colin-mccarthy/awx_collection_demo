@@ -93,7 +93,7 @@
       validate_certs: false
       
       
-# CREDENTIAL
+# CREDENTIALS
   - name: add SSH credential into Ansible Tower
     awx.awx.tower_credential:
       username: ec2-user
