@@ -91,3 +91,17 @@
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
       validate_certs: false
+      
+      
+# CREDENTIAL
+  - name: add SSH credential into Ansible Tower
+    awx.awx.tower_credential:
+      username: ec2-user
+      name: "Workshop Credential"
+      ssh_key_data: "{{ foo }}"
+      kind: ssh
+      organization: "Default"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
