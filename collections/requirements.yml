@@ -1,4 +1,3 @@
 ---
 collections:
-  - paloaltonetworks.panos
-  - awx.awx
+- awx.awx
