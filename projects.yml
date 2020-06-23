@@ -119,3 +119,18 @@
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
       state: "{{ state }}"
+      
+
+# INVENTORYS
+  - name: CREATE INVENTORY
+    awx.awx.tower_inventory:
+      name: "Windows Inventory"
+      organization: "REDHAT ORGANIZATION"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+    register: windows_inventory
+    until: windows_inventory is success
+    delay: 3
+    retries: 5
