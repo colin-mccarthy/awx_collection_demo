@@ -94,7 +94,7 @@
       
       
 # CREDENTIALS
-  - name: add SSH credential into Ansible Tower
+  - name: ADD SSH credential into Ansible Tower
     awx.awx.tower_credential:
       username: ec2-user
       password: "{{admin_password}}"
@@ -106,7 +106,7 @@
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
       
-  - name: add SSH credential into Ansible Tower
+  - name: ADD SSH credential into Ansible Tower
     awx.awx.tower_credential:
       username: ec2-user
       password: "{{admin_password}}"
