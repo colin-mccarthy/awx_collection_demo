@@ -15,7 +15,7 @@
   - name: CREATE ORGANIZATION
     awx.awx.tower_organization:
       name: "{{ organization }}"
-      description: "RedHat Organization"
+      description: "{{ organization }}"
       tower_username: admin
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
