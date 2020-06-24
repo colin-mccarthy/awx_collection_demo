@@ -1,0 +1,44 @@
+---
+- name: Tower Projects
+  hosts: tower
+  gather_facts: false
+  connection: local
+  collections:
+    - awx.awx
+    
+    
+ # organization and state vars are injected via a survey in Ansible Tower.  
+ 
+ 
+   tasks:      
+      
+ # INVENTORYS
+  - name: CREATE INVENTORY
+    awx.awx.tower_inventory:
+      name: "Windows Inventory"
+      organization: "{{ organization }}"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      state: "{{ state }}"
+    register: windows_inventory
+    until: windows_inventory is success
+    delay: 3
+    retries: 5
+    
+    
+    
+  - name: CREATE INVENTORY
+    awx.awx.tower_inventory:
+      name: "RHEL Inventory"
+      organization: "{{ organization }}"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      state: "{{ state }}"
+    register: rhel_inventory
+    until: rhel_inventory is success
+    delay: 3
+    retries: 5
