@@ -47,7 +47,7 @@
     
  
  
-  - name: 'INVENTORY "{{ inv }}" - "{{ state }}"'
+  - name: 'INVENTORY - "{{ state }}"'
     awx.awx.tower_inventory:
       name: "OCP Tower Server REDHATSI"
       organization: "{{ organization }}"
@@ -56,8 +56,6 @@
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
       state: "{{ state }}"
-    var:
-      inv: 'OCP Tower Server REDHATSI'
     register: ocp_tower_inventory
     until: ocp_tower_inventory is success
     delay: 3
