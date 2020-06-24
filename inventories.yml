@@ -15,7 +15,7 @@
           
       
  # INVENTORYS
-  - name: CREATE INVENTORY
+  - name:  'INVENTORY - "{{ state }}"'
     awx.awx.tower_inventory:
       name: "Windows Inventory"
       organization: "{{ organization }}"
