@@ -60,3 +60,19 @@
     until: ocp_tower_inventory is success
     delay: 3
     retries: 5
+    
+    
+    
+  - name: CREATE INVENTORY
+    awx.awx.tower_inventory:
+      name: "ServiceNow Inventory Plugin"
+      organization: "{{ organization }}"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      state: "{{ state }}"
+    register: snow_plugin_inventory
+    until: snow_plugin_inventory is success
+    delay: 3
+    retries: 5
