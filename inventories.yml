@@ -57,7 +57,7 @@
       tower_verify_ssl: false
       state: "{{ state }}"
     var:
-      inv: "OCP Tower Server REDHATSI"
+      inv: OCP Tower Server REDHATSI
     register: ocp_tower_inventory
     until: ocp_tower_inventory is success
     delay: 3
