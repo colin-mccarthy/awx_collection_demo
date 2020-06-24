@@ -47,7 +47,7 @@
     
  
  
-  - name: 'INVENTORY "{{ inv }}"' - "{{ state }}"'
+  - name: 'INVENTORY "{{ inv }}" - "{{ state }}"'
     awx.awx.tower_inventory:
       name: "OCP Tower Server REDHATSI"
       organization: "{{ organization }}"
@@ -65,7 +65,7 @@
     
     
     
-  - name: 'INVENTORY "{{ inv }}"' - "{{ state }}"'
+  - name: 'INVENTORY "{{ inv }}" - "{{ state }}"'
     awx.awx.tower_inventory:
       name: "ServiceNow Inventory Plugin"
       organization: "{{ organization }}"
