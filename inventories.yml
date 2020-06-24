@@ -65,7 +65,7 @@
     
     
     
-  - name: INVENTORY "{{ inv }} - {{ state }}"
+  - name: INVENTORY 
     awx.awx.tower_inventory:
       name: "ServiceNow Inventory Plugin"
       organization: "{{ organization }}"
