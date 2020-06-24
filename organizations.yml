@@ -1,0 +1,23 @@
+---
+- name: Tower Projects
+  hosts: tower
+  gather_facts: false
+  connection: local
+  collections:
+    - awx.awx
+    
+    
+ # organization and state vars are injected via a survey in Ansible Tower.   
+
+
+  tasks:
+# ORGS
+  - name: 'ORGANIZATION "{{ organization }} - "{{ state }}"'
+    awx.awx.tower_organization:
+      name: "{{ organization }}"
+      description: "{{ organization }}"
+      tower_username: admin
+      tower_password: "{{ admin_password }}"
+      tower_host: "{{ ansible_host }}"
+      tower_verify_ssl: false
+      state: "{{ state }}"
