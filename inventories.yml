@@ -7,10 +7,12 @@
     - awx.awx
     
     
- # organization and state vars are injected via a survey in Ansible Tower.  
- 
- 
- tasks:      
+ # organization and state vars are injected via a survey in Ansible Tower.   
+
+
+  tasks:
+
+          
       
  # INVENTORYS
   - name: CREATE INVENTORY
