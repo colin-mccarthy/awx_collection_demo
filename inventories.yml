@@ -10,7 +10,7 @@
  # organization and state vars are injected via a survey in Ansible Tower.  
  
  
-   tasks:      
+ tasks:      
       
  # INVENTORYS
   - name: CREATE INVENTORY
