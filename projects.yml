@@ -134,6 +134,7 @@
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
+      state: "{{ state }}"
     register: windows_inventory
     until: windows_inventory is success
     delay: 3
@@ -147,6 +148,7 @@
       tower_password: "{{ admin_password }}"
       tower_host: "{{ ansible_host }}"
       tower_verify_ssl: false
+      state: "{{ state }}"
     register: rhel_inventory
     until: rhel_inventory is success
     delay: 3
