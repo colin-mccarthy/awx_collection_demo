@@ -47,7 +47,7 @@
     
  
  
-  - name: 'INVENTORY - "{{ state }}"'
+  - name: 'INVENTORY "{{ organization }}" - "{{ state }}"'
     awx.awx.tower_inventory:
       name: "OCP Tower Server REDHATSI"
       organization: "{{ organization }}"
