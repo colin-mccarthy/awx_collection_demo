@@ -1,20 +1,31 @@
 tower_templates:
-  - name: test-template-1
-    description: created by Ansible Playbook
-    job_type: run
-    inventory: RHVM-01
-    credentials: admin@internal-RHVM-01
-    project: Test Project
-    playbook: helloworld.yml
-    verbosity: 2
-    extra_vars:
-      target_hosts: infra-ansible-tower-01.example.com
+#
   - name: Demo Job Template
-    project: Test Project
+    project: "RHEL Demo"
+    job_type: run
+    playbook: apache.yml
+    ask_extra_vars: false
+    concurrent_jobs_enabled: false
+    credentials: Demo Credential
+    verbosity: 0
+    inventory: "RHEL Inventory"
+#
+  - name: Demo Job Template
+    project: "RHEL Demo"
+    job_type: run
+    playbook: yum.yml
+    ask_extra_vars: false
+    concurrent_jobs_enabled: false
+    credentials: Demo Credential
+    verbosity: 0
+    inventory: "RHEL Inventory"
+#    
+  - name: Demo Job Template
+    project: "RHEL Demo"
     job_type: run
     playbook: helloworld.yml
     ask_extra_vars: false
     concurrent_jobs_enabled: false
     credentials: Demo Credential
     verbosity: 0
-    inventory: localhost
+    inventory: "RHEL Inventory"
