@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   collections:
-    - awx.awx
+    - ansible.tower
     
     
  # organization and state vars are injected via a survey in Ansible Tower.   
@@ -13,7 +13,7 @@
   tasks:
 # ORGS
   - name: 'ORGANIZATION "{{ organization }} - "{{ state }}"'
-    awx.awx.tower_organization:
+    ansible.tower.tower_organization:
       name: "{{ organization }}"
       description: "{{ organization }}"
       tower_username: admin
