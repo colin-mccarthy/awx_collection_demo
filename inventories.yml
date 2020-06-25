@@ -1,5 +1,5 @@
 ---
-- name: Tower Projects
+- name: Tower Inventories
   hosts: tower
   gather_facts: false
   connection: local
