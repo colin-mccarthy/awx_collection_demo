@@ -12,19 +12,6 @@
 
   tasks:
 
-
-# PROJECTS     
-  - name: ADD REPO INTO TOWER
-    ansible.tower.tower_project:
-      name: "RHEL Demo"
-      organization: "{{ organization }}"
-      scm_type: git
-      scm_url: "https://github.com/colin-mccarthy/rhel_ansible_demo"
-      tower_username: admin
-      tower_password: "{{ admin_password }}"
-      tower_host: "{{ ansible_host }}"
-      tower_verify_ssl: false
-      state: "{{ state }}"
       
       
 # TEMPLATES
