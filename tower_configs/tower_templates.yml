@@ -6,7 +6,7 @@ tower_templates:
     playbook: apache.yml
     ask_extra_vars: false
     concurrent_jobs_enabled: false
-    credentials: Demo Credential
+    credentials: "RHEL Credential"
     verbosity: 0
     inventory: "RHEL Inventory"
 #
@@ -16,16 +16,16 @@ tower_templates:
     playbook: yum.yml
     ask_extra_vars: false
     concurrent_jobs_enabled: false
-    credentials: Demo Credential
+    credentials: "RHEL Credential"
     verbosity: 0
     inventory: "RHEL Inventory"
 #    
   - name: Demo Job Template
     project: "RHEL Demo"
     job_type: run
-    playbook: helloworld.yml
+    playbook: snow_rhel_incident.yml
     ask_extra_vars: false
     concurrent_jobs_enabled: false
-    credentials: Demo Credential
+    credentials: "RHEL Credential"
     verbosity: 0
     inventory: "RHEL Inventory"
