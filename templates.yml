@@ -8,6 +8,16 @@
     
     
  # organization and state vars are injected via a survey in Ansible Tower.   
+ 
+ 
+  pre_tasks:
+  - name: Include vars from tower_configs directory
+    include_vars:
+      dir: ./tower_configs
+      ignore_files: [tower_config.yml.template]
+      extensions: ["yml"]
+    tags:
+      - always
 
 
   tasks:
