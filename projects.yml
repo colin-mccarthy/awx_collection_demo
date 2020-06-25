@@ -15,7 +15,7 @@
 
 # PROJECTS     
   - name: ADD REPO INTO TOWER
-    awx.awx.tower_project:
+    ansible.tower.tower_project:
       name: "RHEL Demo"
       organization: "{{ organization }}"
       scm_type: git
@@ -27,7 +27,7 @@
       state: "{{ state }}"
       
   - name: ADD REPO INTO TOWER
-    awx.awx.tower_project:
+    ansible.tower.tower_project:
       name: "Windows Demo"
       organization: "{{ organization }}"
       scm_type: git
@@ -39,7 +39,7 @@
       state: "{{ state }}"
       
   - name: ADD REPO INTO TOWER
-    awx.awx.tower_project:
+    ansible.tower.tower_project:
       name: "ServiceNow Demo"
       organization: "{{ organization }}"
       scm_type: git
@@ -53,7 +53,7 @@
       
 # TEAMS
   - name: CREATE TEAM
-    awx.awx.tower_team:
+    ansible.tower.tower_team:
       name: "RedHatSI"
       description: "RedHat SI"
       organization: "{{ organization }}"
@@ -66,7 +66,7 @@
  
 # PERMISSIONS
   - name: ENSURE THAT USER BELONGS TO ORG
-    awx.awx.tower_role:
+    ansible.tower.tower_role:
       user: colin-mccarthy
       organization: "{{ organization }}"
       role: member
@@ -77,7 +77,7 @@
       state: "{{ state }}"
       
   - name: ENSURE THAT USER BELONGS TO ORG
-    awx.awx.tower_role:
+    ansible.tower.tower_role:
       user: wtcross
       organization: "{{ organization }}"
       role: member
@@ -90,7 +90,7 @@
 
 # CREDENTIALS
   - name: ADD SSH credential into Ansible Tower
-    awx.awx.tower_credential:
+    ansible.tower.tower_credential:
       username: ec2-user
       password: "{{admin_password}}"
       name: "Windows Credential"
@@ -103,7 +103,7 @@
       state: "{{ state }}"
       
   - name: ADD SSH credential into Ansible Tower
-    awx.awx.tower_credential:
+    ansible.tower.tower_credential:
       username: ec2-user
       password: "{{admin_password}}"
       name: "RHEL Credential"
