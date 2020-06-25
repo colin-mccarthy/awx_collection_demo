@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   collections:
-    - awx.awx
+    - ansible.tower
     
     
  # organization and state vars are injected via a survey in Ansible Tower.   
@@ -16,7 +16,7 @@
       
  # INVENTORYS
   - name:  'INVENTORY - "{{ state }}"'
-    awx.awx.tower_inventory:
+    ansible.tower.tower_inventory:
       name: "Windows Inventory"
       organization: "{{ organization }}"
       tower_username: admin
@@ -32,7 +32,7 @@
     
     
   - name: 'INVENTORY - "{{ state }}"'
-    awx.awx.tower_inventory:
+    ansible.tower.tower_inventory:
       name: "RHEL Inventory"
       organization: "{{ organization }}"
       tower_username: admin
@@ -48,7 +48,7 @@
  
  
   - name: 'INVENTORY - "{{ state }}"'
-    awx.awx.tower_inventory:
+    ansible.tower.tower_inventory:
       name: "OCP Tower Server REDHATSI"
       organization: "{{ organization }}"
       tower_username: admin
@@ -64,7 +64,7 @@
     
     
   - name: 'INVENTORY - "{{ state }}"' 
-    awx.awx.tower_inventory:
+    ansible.tower.tower_inventory:
       name: "ServiceNow Inventory Plugin"
       organization: "{{ organization }}"
       tower_username: admin
