@@ -1,5 +1,7 @@
 tower_templates:
 #
+############################################### RHEL Demo - Project
+#
   - name: Demo Job Template
     project: "RHEL Demo"
     job_type: run
@@ -10,6 +12,8 @@ tower_templates:
     verbosity: 0
     inventory: "RHEL Inventory"
 #
+# 
+#
   - name: Demo Job Template
     project: "RHEL Demo"
     job_type: run
@@ -19,7 +23,9 @@ tower_templates:
     credentials: "RHEL Credential"
     verbosity: 0
     inventory: "RHEL Inventory"
-#    
+# 
+#
+#
   - name: Demo Job Template
     project: "RHEL Demo"
     job_type: run
